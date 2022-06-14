@@ -1,0 +1,88 @@
+extends ../layouts/default.pug
+
+block config
+    //- Global Page Configuration
+    -  var pageTitle = '#community-name# for Sale • The Urbana Real Estate Exchange'
+    -  var exchangeName = 'Urbana '
+
+append css
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'text-dark',
+        navbarBtnColor: 'btn-warning',
+        navbarContainer: 'container px-5'
+    })
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'overlay overlay-primary overlay-50',
+        pageHeaderStyle: 'page-header-ui-light pb-5',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+
+        .page-header-ui-content.py-3.position-relative
+            .container.px-3.text-center
+                h1.page-header-ui-title #sales-title# for Sale
+
+    // Neighborhood Expert
+    include mixins/neighborhood-expert.pug
+    +section({sectionBg: 'bg-white'})
+
+
+    // Overview section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-l-10 p-sm-2 border-bottom',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        sectionId: 'overview'
+    })
+        .container.px-lg-15.pt-3.pb-5
+            .div.p-indent #overview-content#
+            div.my-5.mx-md-5.mx-sm-0
+                | ##default-cta##
+            .div.mt-3.p-5 #mls#
+
+
+
+    include mixins/properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+    include mixins/all-properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-light',
+        footerStyle: 'footer-light'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });

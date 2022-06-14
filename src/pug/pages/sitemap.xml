@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <sitemap>
+        <loc>#domain/properties.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>1.0</priority>
+    </sitemap>
+    <sitemap>
+        <loc>#domain/townhomes-for-sale.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.9</priority>
+    </sitemap>
+    <sitemap>
+        <loc>#domain/townhomes-for-rent.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.6</priority>
+    </sitemap>
+    <sitemap>
+        <loc>#domain/homes-for-sale.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.7</priority>
+    </sitemap>
+    <sitemap>
+        <loc>#domain/homes-for-rent.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.4</priority>
+    </sitemap>
+
+    <sitemap>
+        <loc>#domain/condos-for-sale.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.8</priority>
+    </sitemap>
+    <sitemap>
+        <loc>#domain/condos-for-rent.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.5</priority>
+    </sitemap>
+
+    <sitemap>
+        <loc>#domain/pages.xml</loc>
+        <lastmod>#last_mod</lastmod>
+        <priority>0.3</priority>
+    </sitemap>
+
+</sitemapindex>

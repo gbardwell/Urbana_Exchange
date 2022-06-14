@@ -1,0 +1,69 @@
+// Navbar
+mixin navbar(options)
+
+    nav.navbar.navbar-marketing.navbar-expand-lg(class=options.navbarBg, class=options.navbarStyle, class=options.navbarPosition)
+        div(class=options.navbarContainer)
+            a.navbar-brand(href='/', class=options.navbarBrandColor, style="width:86px")
+                img.rounded.nav-logo(src='assets/img/logo-nav.png' alt='')
+            button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                i(data-feather='menu')
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mx-auto.justify-content-center
+                    li.nav-item
+
+                        a.nav-link(href="buy" target="_blank") Buy
+
+                    li.nav-item
+                        a.nav-link(href="sell" target="_blank") Sell
+
+                    li.nav-item.dropdown.no-caret
+                        a#navbarDropdownCondos.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Condos
+                            i.fas.fa-chevron-right.dropdown-arrow
+                        .dropdown-menu.dropdown-menu-end.animated--fade-in-up
+                            a.dropdown-item.p-4(href='condos') Condo Building Locator
+                            .dropdown-divider.border-0s
+                            a.dropdown-item.p-4(href='condo-resources') Condo Resources
+                    li.nav-item.dropdown.no-caret
+                        a#navbarDropdownTownhomes.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Townhomes
+                            i.fas.fa-chevron-right.dropdown-arrow
+                        .dropdown-menu.dropdown-menu-end.animated--fade-in-up
+                            a.dropdown-item.p-4(href='townhomes') Townhome Neighborhood Locator
+                            .dropdown-divider.border-0s
+                            a.dropdown-item.p-4(href='townhome-resources') Townhome Resources
+
+                    li.nav-item.dropdown.no-caret
+                        a#navbarDropdownHomes.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Homes
+                            i.fas.fa-chevron-right.dropdown-arrow
+                        .dropdown-menu.dropdown-menu-end.animated--fade-in-up
+                            a.dropdown-item.p-4(href='homes') Homes Neighborhood Locator
+                            .dropdown-divider.border-0s
+                            a.dropdown-item.p-4(href='home-resources') Homes Resources
+
+
+                    li.nav-item.dropdown.no-caret
+                        a#navbarDropdownApartments.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | Apts
+                            i.fas.fa-chevron-right.dropdown-arrow
+                        .dropdown-menu.dropdown-menu-end.animated--fade-in-up
+                            a.dropdown-item.p-4(href='apartments') Apartment Building Locator
+                            .dropdown-divider.border-0s
+                            a.dropdown-item.p-4(href='apartment-resources') Apartment Resources
+
+                    li.nav-item.dropdown.no-caret
+                        a#navbarDropdownMore.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                            | More
+                            i.fas.fa-chevron-right.dropdown-arrow
+                        .dropdown-menu.dropdown-menu-end.animated--fade-in-up
+                            a.dropdown-item.p-4(href='testimonials') Testimonials
+                            a.dropdown-item.p-4(href='team') Team
+                            a.dropdown-item.p-4(href='core-values') Core Values
+
+                            a.dropdown-item.p-4(href='mission-statement') Mission Statement
+                            a.dropdown-item.p-4(href='contact-us') Contact Us
+                                
+                div.text-center
+                    a.btn.btn-danger.fw-500.ms-lg-4(href="tel:240-223-2419") 240-223-2419
+                        i.ms-2(data-feather='phone')

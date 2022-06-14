@@ -1,0 +1,94 @@
+// 
+// Project styles
+// 
+
+// This file is intentionally blank
+// Use this file to override SCSS within the project, or to add new SCSS
+// for creating your own CSS components
+
+.bg-white-70 {
+  background-color:rgba(255, 255, 255, 0.70);
+}
+
+.bg-white-70 {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+
+.h-image-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.widget-popup {
+  cursor: pointer;
+  border-bottom: 2px solid;
+}
+
+.widget-cursor {
+  cursor: pointer;
+}
+
+.nav-logo {
+  position: absolute;
+  top: 5px;
+  height: 86px !important;
+}
+
+.t-image-overlay {
+  position: absolute;
+  top: 20px;
+}
+
+div.container > p {
+  padding-left: 1.5em;
+}
+
+.p-indent {
+  padding-left: 1.5em;
+  padding-top: 0.75em;
+}
+
+div.p-indent > p {
+  padding-left: 1.5em;
+}
+/*
+div.row > div.col-sm-12.col-lg-8.col-md-12 > p {
+  padding-left: 1.0em;
+}
+ */
+
+div.p-indent > h3 {
+  padding-top: 1.0em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// selector Lables
+#layoutDefault_content > main > header > widget > div > div > div > div > div > div > label {
+  padding-left: 1.5em;
+}
+
+.IDX-showcaseStatus {
+  display: block !important;
+  background: #000000;
+  color: #FFFFFF;
+  position: absolute;
+  padding: 5px 45px;
+  width: 200px;
+  top: 40px;
+  left: -40px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  text-align: center;
+}
+.IDX-showcaseCell {
+  position: relative;
+  overflow: hidden;
+}

@@ -1,0 +1,37 @@
+//- Property widget at bottom of pages
+- var exchangeName = 'Urbana '
+mixin widget(options)
+
+    widget(class=options.sectionBg + ' mt-5')
+        .container.px-5.pt-5(id="locator")
+            .row.gx-5.justify-content-center
+                .col-lg-6
+                    .mb-5.text-center
+                        .text-xs.text-uppercase-expanded.text-primary.mb-2 You Won't Find Our Proprietary Locators Anywhere Else - Use Them to Quickly Narrow Down Your Search
+
+            .row.gx-5.justify-content-center.mx-lg-10
+                .col-md-6.col-lg-4.col-xl-3.mb-4
+                    a.card.lift.h-100(href='condos')
+                        img.card-img-top(src='assets/img/condo-locator-footer.jpg', alt='...')
+                        .card-img-overlay
+                        .card-body.text-center
+                            h6.card-title.mt-2.mb-0 Condo Building Locator
+                .col-md-6.col-lg-4.col-xl-3.mb-4
+                    a.card.lift.h-100(href='townhomes')
+                        img.card-img-top(src='assets/img/townhome-locator-footer.jpg', alt='...')
+                        .card-img-overlay
+                        .card-body.text-center
+                            h6.card-title.mb-0 Townhome Neighborhood Locator
+                .col-md-6.col-lg-4.col-xl-3.mb-4
+                    a.card.lift.h-100(href='homes')
+                        img.card-img-top(src='assets/img/home-locator-footer.jpg', alt='...')
+                        .card-img-overlay
+                        .card-body.text-center
+                            h6.card-title.mb-0 Home Neighborhood Locator
+                .col-md-6.col-lg-4.col-xl-3.mb-4
+                    a.card.lift.h-100(href='apartments')
+                        img.card-img-top(src='assets/img/apartment-locator-footer.jpg', alt='...')
+                        .card-img-overlay
+                        .card-body.text-center
+                            h6.card-title.mb-0 Apartment Building Locator
+

@@ -1,0 +1,182 @@
+extends ../layouts/default.pug
+
+block config
+    //- Global Page Configuration
+    -  var pageTitle = '#community-name# • The Urbana Real Estate Exchange'
+    -  var exchangeName = 'Urbana '
+
+append css
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'text-dark',
+        navbarBtnColor: 'btn-warning',
+        navbarContainer: 'container px-5'
+    })
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'overlay overlay-primary overlay-50',
+        pageHeaderStyle: 'page-header-ui-light pb-lg-4',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+
+        .page-header-ui-content.py-3.position-relative
+            .container.px-3
+                .row.gx-5.justify-content-center
+                    .col-xl-8.col-lg-10.text-center
+                        h1.page-header-ui-title.pb-2 #community-name#
+                        nav.navbar.bg-light.nav-justified.rounded.my-5
+                            a.nav-link(href='#basics') The Basics
+                            a.nav-link(href='#daily') Daily Living
+                            a.nav-link(href='#costofliving') Cost of Living
+                            a.nav-link(href='#recreation') Recreation
+                            a.nav-link(href='#search-more') Search More...
+
+    // Neighborhood Expert
+    include mixins/neighborhood-expert.pug
+    +section({sectionBg: 'bg-white'})
+
+
+    // Overview section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-5',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        sectionId: 'overview'
+    })
+        .container.px-lg-15.pt-3.pb-5
+            .row.mt-4.justify-content-center
+                .col-sm-12.col-lg-8.col-md-12 #overview-content#
+
+
+    // The Basics section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-2',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        sectionId: 'basics'
+    })
+       .container.px-lg-15.my-5
+            h2.text-center #community-name# &dash;  The Basics
+            div #basics#
+            div.my-5.mx-md-5.mx-sm-0
+                | ##default-cta##
+
+
+    // Overview section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-2',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-light',
+        sectionId: 'daily'
+    })
+       .container.px-lg-15.my-5
+           h2.text-center #community-name# &dash;  Daily Living
+           div #daily#
+
+    // The Cost Of Living section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-2',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        sectionId: 'costofliving'
+    })
+        .container.px-lg-15.my-5
+            h2.text-center #community-name# &dash;  Cost Of Living
+            div #cost-of-living#
+
+    // Recreation section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-2',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-light',
+        sectionId: 'recreation'
+    })
+        .container.px-lg-15.my-5
+            h2.text-center #community-name# &dash;  Recreation
+            div #recreation#
+
+    // Disclaimer section
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionBgImg: '',
+        sectionPadding: 'p-2',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-light',
+        sectionId: 'disclaimer'
+    })
+        .container.px-lg-15.my-5
+            h3.text-center Disclaimer
+            .row.mt-4.justify-content-center
+                .col-sm-12.col-lg-8.col-md-12
+                    p We&rsquo;ve made every effort to verify all of the information in this blog post and believe it to be correct.
+                    p
+                        | If you believe any of the information above to be incorrect, please contact us through this website or give us a call at
+                        a(href='tel:2403388355') 240-338-8355
+                        | .
+                    p In addition, we encourage you to always double-check with the neighborhood management regarding any circumstance that may influence your buying/renting decision.
+
+
+    include mixins/properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+    include mixins/all-properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-light',
+        footerStyle: 'footer-light'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });

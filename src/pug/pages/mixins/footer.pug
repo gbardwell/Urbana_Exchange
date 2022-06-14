@@ -1,0 +1,109 @@
+mixin footer(options)
+
+    footer.footer.pt-lg-4.pb-5.mt-auto(class=options.footerBg, class=options.footerStyle)
+
+        if block
+            block
+        else
+            .container.px-5
+                .row.gx-5.align-items-center.my-3
+                    .col.text-center
+                        a.btn.btn-lg.btn-danger(href="https://calendly.com/andydetweiler/", target="_blank", style="color: white !important") Schedule Appointment
+                            i.ms-2(data-feather='calender')
+                        div.my-5.mx-md-5.mx-sm-0
+                            | ##default-cta##
+
+                hr.my-4
+
+                .row.gx-5.align-items-center
+                    .col-md-4.text-center.text-dark
+                        a(href="team") Team
+                        br
+                        a(href="testimonials") Testimonials
+                        br
+                        a(href="core-values") Core Values
+                    .col-md-4.text-center.text-dark
+                        a(href="mission-statement") Mission Statement
+                        br
+                        a(href="contact-us") Contact Us
+                        br
+                        a(href="advertise") Advertise
+
+
+                    .col-md-4.text-center.text-dark
+                        br
+                        a(href="https://www.youtube.com/channel/UCOt8JBP7kJ9FNAw4EnFlxaA/videos" target="_blank") RREE TV
+                        br
+                        a(href="faqs") FAQs
+                        br
+                        a(href="work-with-us") Work With Us
+
+                hr.my-4
+
+                .row.mt-5.gx-5.align-items-center
+
+                    .col-md-3.text-center
+                        a(href="20874-condos-sale") 20874 Condos for Sale
+                        br
+                        a(href="20874-condos-rent") 20874 Condos for Rent
+                        br
+                        a(href="20874-townhomes-sale") 20874 Townhomes for Sale
+                        br
+                        a(href="20874-townhomes-rent") 20874  Townhomes for Rent
+                        br
+                        a(href="20874-homes-sale") 20874 Homes for Sale
+                        br
+                        a(href="20874-homes-rent") 20874 Homes for Rent
+
+                    .col-md-3.text-center
+                        a(href="20876-condos-sale") 20876 Condos for Sale
+                        br
+                        a(href="20876-condos-rent") 20876 Condos for Rent
+                        br
+                        a(href="20876-townhomes-sale") 20876 Townhomes for Sale
+                        br
+                        a(href="20876-townhomes-rent") 20876 Townhomes for Rent
+                        br
+                        a(href="20876-homes-sale") 20876 Homes for Sale
+                        br
+                        a(href="20876-homes-rent") 20876 Homes for Rent
+
+                    .col-md-3.text-center
+                        a(href="condos") Urbana Condos for Sale
+                        br
+                        a(href="condos") Urbana Condos for Rent
+                        br
+                        a(href="townhomes") Urbana Townhomes for Sale
+                        br
+                        a(href="townhomes") Urbana Townhomes for Rent
+                        br
+                        a(href="homes") Urbana Homes for Sale
+                        br
+                        a(href="homes") Urbana Homes for Rent
+
+                    .col-md-3.text-center
+                        a(href="condos") Darnestown Condos for Sale
+                        br
+                        a(href="condos") Darnestown Condos for Rent
+                        br
+                        a(href="townhomes") Darnestown Townhomes for Sale
+                        br
+                        a(href="townhomes") Darnestown Townhomes for Rent
+                        br
+                        a(href="homes") Darnestown Homes for Sale
+                        br
+                        a(href="homes") Darnestown Homes for Rent
+
+
+
+                hr.my-5
+                .row.text-dark
+                    .col-12.text-center
+                        p &copy; The Urbana Real Estate Exchange 2022
+                .row.text-dark
+                    .col-12.text-center
+                        a(href='terms-and-conditions') Terms and Conditions
+
+
+            .myPopup(data-sm-init='true' style='width: auto; height: 606px; background: rgb(255, 255, 255, 0);')
+                | ##default-popup##

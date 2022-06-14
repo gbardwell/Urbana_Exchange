@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://urbanarealestateexchange.com/sitemap.xml
+Sitemap: https://search.urbanarealestateexchange.com/idx/sitemap

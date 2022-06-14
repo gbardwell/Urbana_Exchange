@@ -1,0 +1,65 @@
+extends ../layouts/default.pug
+
+block config
+    //- Global Page Configuration
+    -  var pageTitle = 'Urbana Real Estate for Sale and Rent • The Urbana Real Estate Exchange'
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'text-dark',
+        navbarBtnColor: 'btn-warning',
+        navbarContainer: 'container px-5'
+    })
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-img-cover overlay overlay-light overlay-80',
+        pageHeaderBgImg: 'background-image: url("assets/img/header-background.jpg")',
+        pageHeaderStyle: 'page-header-ui-light',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+
+        .page-header-ui-content.pt-lg-5.position-relative
+            .container.px-5
+                .row.gx-5.justify-content-center
+                    .col-xl-8.col-lg-10.text-center
+                        h1.page-header-ui-title The Urbana Real Estate Exchange
+
+                        p.page-header-ui-text.mt-3.mb-5 Learn about every neighborhood in the area, then see what's for sale and what's for rent. As desired, contact a true neighborhood expert who lives in your area of interest.
+                    .row.gx-5.justify-content-center
+                        .col-xl-6.col-lg-8.text-center
+                            a.btn.btn-lg.btn-blue.mr-2.mt-3(href="#locator") Neighborhood Search
+                            | &nbsp;
+                            a.btn.btn-lg.btn-danger.ml-e.mt-3(href="https://calendly.com/andydetweiler/", target="_blank") Schedule Appointment
+                                i.ms-2(data-feather='calender')
+
+
+
+    include mixins/properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+    include mixins/all-properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-light',
+        footerStyle: 'footer-light'
+    })
+

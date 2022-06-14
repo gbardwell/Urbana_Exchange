@@ -1,0 +1,133 @@
+extends ../layouts/default.pug
+
+block config
+    //- Global Page Configuration
+    -  var pageTitle = 'Urbana Home Resources • The Urbana Real Estate Exchange'
+    - var exchangeName = 'Urbana '
+
+append css
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'text-dark',
+        navbarBtnColor: 'btn-warning',
+        navbarContainer: 'container px-5'
+    })
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-img-cover overlay overlay-light overlay-80',
+        pageHeaderBgImg: 'background-image: url("assets/img/home-header-background.jpg")',
+        pageHeaderStyle: 'page-header-ui-light pb-5',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+        .page-header-ui-content.py-5.position-relative
+            .container.px-5
+                h1.page-header-ui-title.text-center #{exchangeName} Detached Home Resources
+
+
+    //- * * * * * * * * * * *
+    //- * * body * *
+    //- * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionPadding: 'py-lg-10 pt-3',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: ''
+    })
+        .container.px-lg-10
+            .row.gx-5.justify-content-center
+                .col.px-lg-10
+                    nav
+                        #nav-tab.nav.nav-tabs(role='tablist')
+                            button#nav-seller-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#nav-seller' type='button' role='tab' aria-controls='nav-seller' aria-selected='true') Seller Resources
+                            button#nav-buyer-tab.nav-link(data-bs-toggle='tab' data-bs-target='#nav-buyer' type='button' role='tab' aria-controls='nav-buyer' aria-selected='false') Buyer Resources
+                            button#nav-renter-tab.nav-link(data-bs-toggle='tab' data-bs-target='#nav-renter' type='button' role='tab' aria-controls='nav-renter' aria-selected='false') Renter Resources
+                            button#nav-landlord-tab.nav-link(data-bs-toggle='tab' data-bs-target='#nav-landlord' type='button' role='tab' aria-controls='nav-landlord' aria-selected='false') Landlord Resources
+                    #nav-tabContent.tab-content
+                        #nav-seller.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='nav-seller-tab')
+
+                            .row.gx-5.p-5 #seller-resources#
+
+                        #nav-buyer.tab-pane.fade(role='tabpanel' aria-labelledby='nav-buyer-tab')
+
+                            .row.gx-5.p-5 #buyer-resources#
+
+                        #nav-renter.tab-pane.fade(role='tabpanel' aria-labelledby='nav-renter-tab')
+
+                            .row.gx-5.p-5 #renter-resources#
+
+                        #nav-landlord.tab-pane.fade(role='tabpanel' aria-labelledby='nav-landlord-tab')
+
+                            .row.gx-5.p-5 #landlord-resources#
+
+
+    include mixins/properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+    include mixins/all-properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-light',
+        footerStyle: 'footer-light'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });
+    script.
+        $('#metroSelect, #zipcodeSelect, #condoTypeSelect, #garageParking, #washerDryer').change(() => {
+            console.log("Filter Changed...");
+            $(".property").hide();
+            let filter = ''
+            if ($('#metroSelect').val()) {
+                filter += "[filters~='" + $('#metroSelect').val() + "']";
+            }
+            if ($('#zipcodeSelect').val()) {
+                filter += "[filters~='" + $('#zipcodeSelect').val() + "']";
+            }
+            if ($('#condoTypeSelect').val()) {
+                filter += "[filters~='" + $('#condoTypeSelect').val() + "']";
+            }
+            if ($('#garageParking:checked').val()) {
+                // console.log('Garage: ', $('#garageParking:checked').val());
+                filter += "[filters~='garage']";
+            }
+            if ($('#washerDryer:checked').val()) {
+                filter += "[filters~='washer']";
+            }
+            console.log("Filter Changed...", filter);
+            if (filter) {
+                $(filter).show();
+            } else {
+                $(".property").show();
+            }
+        });

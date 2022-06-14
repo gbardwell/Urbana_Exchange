@@ -1,0 +1,24 @@
+//- Property widget at bottom of pages
+- var exchangeName = 'Urbana '
+mixin widget(options)
+
+    widget()
+        .page-header-ui-content.py-5.position-relative
+            .container.px-5
+                case options.type
+                    when 'townhomes'
+                        h1.page-header-ui-title.text-center #{exchangeName} Townhomes
+                    when 'houses'
+                        h1.page-header-ui-title.text-center #{exchangeName} Homes
+                .row.gx-5.justify-content-center
+                    .col.bg-white-25.border.rounded.mt-3.mb-3.p-4
+                        h4.text-center Filter By
+                        .row
+                            .col-md-4.d-sm-none.d-md-block.mt-2
+                            .form-floating.col.mt-2
+                                select#zipcodeSelect.form-select(aria-label='Zip code')
+                                    option(value='' selected='') -- Any --
+                                    option(value='20874') 20874
+                                    option(value='20876') 20876
+                                label(for='zipcodeSelect') Zip Code
+                            .col-md-4.d-sm-none.d-md-block.mt-2

@@ -1,0 +1,118 @@
+//- Property widget at bottom of pages
+- var exchangeName = 'Urbana '
+mixin widget(options)
+
+    widget(class=options.sectionBg + ' mt-5', id="search-more")
+        .d-flex.justify-content-center.mt-lg-5
+
+            // Nav tabs
+            div.m-2
+                ul#widgetTabs.nav.nav-tabs.border-0(role='tablist')
+                    li.nav-item(role='presentation')
+                        button#condo-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#condo' type='button' role='tab' aria-controls='condo' aria-selected='true')
+                            | #{exchangeName} Condos
+                    li.nav-item(role='presentation')
+                        button#townhome-tab.nav-link(data-bs-toggle='tab' data-bs-target='#townhome' type='button' role='tab' aria-controls='townhome' aria-selected='false')
+                            | #{exchangeName} Townhomes
+                    li.nav-item(role='presentation')
+                        button#homes-tab.nav-link(data-bs-toggle='tab' data-bs-target='#homes' type='button' role='tab' aria-controls='homes' aria-selected='false')
+                            | #{exchangeName} Homes
+                    li.nav-item(role='presentation')
+                        button#apartments-tab.nav-link(data-bs-toggle='tab' data-bs-target='#apartments' type='button' role='tab' aria-controls='apartments' aria-selected='false')
+                            | #{exchangeName} Apartments
+
+                // Tab panes
+                .tab-content
+                    // Condos
+                    #condo.tab-pane.active(role='tabpanel' aria-labelledby='condo-tab')
+                        .card.mb-3
+                            .row.g-0
+                                .col-md-5.align-self-center
+                                    img.img-fluid.rounded-start(src='assets/img/condo-locator-footer.jpg' alt='...')
+                                .col-md-7.align-self-center
+                                    .card-body
+                                        .px-4
+                                            h5 #{exchangeName} Condos For Sale
+                                            #condoSaleBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up
+                                            h5 #{exchangeName} Condos For Rent
+                                            #condoRentBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-4 &nbsp;Please Select
+                                                i.fa.fa-chevron-up
+                                            h5 #{exchangeName} Condo Living
+                                            #condoLivingBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up
+                    #townhome.tab-pane(role='tabpanel' aria-labelledby='townhome-tab')
+                        .card.mb-3
+                            .row.g-0
+                                .col-md-5.align-self-center
+                                    img.img-fluid.rounded-start(src='assets/img/townhome-locator-footer.jpg' alt='...')
+                                .col-md-7.align-self-center
+                                    .card-body
+                                        .px-4
+                                            h5 #{exchangeName} Townhomes For Sale
+                                            #townSaleBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+                                            h5 #{exchangeName} Townhomes For Rent
+                                            #townRentBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-4 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+                                            h5 #{exchangeName} Townhome Living
+                                            #townLivingBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+                    #homes.tab-pane(role='tabpanel' aria-labelledby='homes-tab')
+                        .card.mb-3
+                            .row.g-0
+                                .col-md-5.align-self-center
+                                    img.img-fluid.rounded-start(src='assets/img/home-locator-footer.jpg' alt='...')
+                                .col-md-7.align-self-center
+                                    .card-body
+                                        .px-4
+                                            h5 #{exchangeName} Homes For Sale
+                                            #homesSaleBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+                                            h5 #{exchangeName} Homes For Rent
+                                            #homesRentBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-4 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+                                            h5 #{exchangeName} Homes Living
+                                            #homesLivingBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+                    #apartments.tab-pane(role='tabpanel' aria-labelledby='apartments-tab')
+                        .card.mb-3
+                            .row.g-0
+                                .col-md-5
+                                    img.img-fluid.rounded-start(src='assets/img/apartment-locator-footer.jpg' alt='...')
+                                .col-md-7
+                                    .card-body
+                                        .px-4.mt-3
+                                            h5 #{exchangeName} Apartment Living
+                                            #apartmentLivingBtn.d-flex.justify-content-between.w-auto.widget-popup.mb-3.text-primary.border-primary(data-bs-toggle='modal' data-bs-target='#dwModalWidget')
+                                                span.ml-3 &nbsp;Please Select
+                                                i.fa.fa-chevron-up.pull-right
+
+
+
+        #dwModalWidget.modal(tabindex='-1')
+            .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+                .modal-content
+                    .modal-header
+                        h5.modal-title
+                            | #{exchangeName}
+                            span#widgetTitle title
+                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                    .modal-body
+                        .list-group.list-group-flush
+                            .d-flex.justify-content-center.w-100
+                                .spinner-border.text-primary(role='status')
+                                    span.visually-hidden Loading...
+                                h3.pl-5.pt-1.text-primary
+                                    span &nbsp;&nbsp;Loading...
+                        .modal-footer
+                            button.btn.btn-blue(type='button' data-bs-dismiss='modal') Close

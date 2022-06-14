@@ -1,0 +1,73 @@
+extends ../layouts/default.pug
+
+block config
+
+    //- Global Page Configuration
+    - var pageTitle = '#article-title#  •  The Urbana Real Estate Exchange'
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'text-dark',
+        navbarBtnColor: 'btn-warning',
+        navbarContainer: 'container px-5'
+    })
+
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-img-cover overlay overlay-light overlay-80',
+        pageHeaderBgImg: 'background-image: url("assets/img/townhome-header-background.jpg")',
+        pageHeaderStyle: 'page-header-ui-light py-10',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+        .page-header-ui-content.pt-lg-5.position-relative
+            .container.px-5
+                .row.gx-5.justify-content-center
+                    .col-xl-8.col-lg-10.text-center
+                        h1.page-header-ui-title.pt-5 #article-title#
+
+
+
+    //- * * * * * * * * * * *
+    //- * * Text Section  * *
+    //- * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionPadding: '',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: ''
+    })
+        .container.py-lg-10.px-lg-10
+            div.px-lg-10 #body-html#
+
+    include mixins/properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+    include mixins/all-properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-light',
+        footerStyle: 'footer-light'
+    })

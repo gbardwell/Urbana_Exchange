@@ -1,0 +1,108 @@
+extends ../layouts/default.pug
+
+block config
+    //- Global Page Configuration
+    -  var pageTitle = 'Urbana Townhome Directory • The Urbana Real Estate Exchange'
+
+
+append css
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'text-dark',
+        navbarBtnColor: 'btn-warning',
+        navbarContainer: 'container px-5'
+    })
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-img-cover overlay overlay-light overlay-80',
+        pageHeaderBgImg: 'background-image: url("assets/img/townhome-header-background.jpg")',
+        pageHeaderStyle: 'page-header-ui-light pb-4',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+        include mixins/townhomes-houses.pug
+        +widget({type: 'townhomes'})
+
+    //- * * * * * * * * * * *
+    //- * * Property List * *
+    //- * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionPadding: 'py-10',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: ''
+    })
+        .container.px-5
+            .row.row-cols-1.row-cols-md-3.g-5.locator-div #locator-properties#
+
+            .row.px-5
+                .d-flex.justify-content-center.w-100
+                    .alert.alert-danger.mt-3.no-properties(role='alert' style='display: none;')
+                        | No Community or Townhomes Meet the Filter Criteria
+
+
+    include mixins/properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+    include mixins/all-properties-widget.pug
+    +widget({sectionBg: 'bg-white'})
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-light',
+        footerStyle: 'footer-light'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });
+    script.
+        $('#metroSelect, #zipcodeSelect, #condoTypeSelect, #garageParking, #washerDryer').change(() => {
+            console.log("Filter Changed...");
+            $(".property").hide();
+            let filter = ''
+            if ($('#metroSelect').val()) {
+                filter += "[filters~='" + $('#metroSelect').val() + "']";
+            }
+            if ($('#zipcodeSelect').val()) {
+                filter += "[filters~='" + $('#zipcodeSelect').val() + "']";
+            }
+            if (filter) {
+                $(filter).show();
+                if ($(filter).length == 0) {
+                    $(".no-properties").show();
+                } else {
+                    $(".no-properties").hide();
+                }
+            } else {
+                $(".property").show();
+                $(".no-properties").hide();
+            }
+        });
